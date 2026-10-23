@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle2, ShieldCheck, Users, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, ShieldCheck, Users, ArrowRight, Loader2 } from 'lucide-react';
 import { delegatePackages } from '../data/summitData';
+import { sendDelegateRegistration, RECIPIENT_EMAIL } from '../services/emailService';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -32,12 +33,15 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     agreedPrivacy: true,
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState<{
     refId: string;
     name: string;
     packageName: string;
     delegatesCount: number;
     email: string;
+    recipientEmail: string;
+    mailtoFallbackUrl?: string;
   } | null>(null);
 
   useEffect(() => {
@@ -52,22 +56,86 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const pkg = delegatePackages.find(p => p.id === formData.packageId) || delegatePackages[1];
     const generatedRef = `GBS-2027-REG-${Math.floor(100000 + Math.random() * 900000)}`;
 
-    setSubmittedData({
-      refId: generatedRef,
-      name: formData.fullName,
-      packageName: pkg.name,
-      delegatesCount: formData.delegatesCount,
-      email: formData.email,
-    });
+    let groupDetails = '';
+    if (formData.packageId === 'group') {
+      groupDetails = `Delegate 2: ${formData.groupDelegate2Name || 'N/A'} (${formData.groupDelegate2Email || 'N/A'})\nDelegate 3: ${formData.groupDelegate3Name || 'N/A'} (${formData.groupDelegate3Email || 'N/A'})`;
+    }
+
+    try {
+      const result = await sendDelegateRegistration({
+        refId: generatedRef,
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        organization: formData.organization,
+        jobTitle: formData.jobTitle,
+        country: formData.country,
+        packageName: pkg.name,
+        packagePrice: pkg.formattedPrice,
+        delegatesCount: formData.delegatesCount,
+        notes: formData.notes,
+        groupDetails,
+      });
+
+      setSubmittedData({
+        refId: generatedRef,
+        name: formData.fullName,
+        packageName: pkg.name,
+        delegatesCount: formData.delegatesCount,
+        email: formData.email,
+        recipientEmail: RECIPIENT_EMAIL,
+        mailtoFallbackUrl: result.mailtoFallbackUrl,
+      });
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        organization: '',
+        jobTitle: '',
+        country: 'Ghana',
+        packageId: initialPackageId || 'individual',
+        delegatesCount: initialPackageId === 'group' ? 3 : 1,
+        notes: '',
+        groupDelegate2Name: '',
+        groupDelegate2Email: '',
+        groupDelegate2Role: '',
+        groupDelegate3Name: '',
+        groupDelegate3Email: '',
+        groupDelegate3Role: '',
+        agreedPrivacy: true,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     setSubmittedData(null);
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      organization: '',
+      jobTitle: '',
+      country: 'Ghana',
+      packageId: initialPackageId || 'individual',
+      delegatesCount: initialPackageId === 'group' ? 3 : 1,
+      notes: '',
+      groupDelegate2Name: '',
+      groupDelegate2Email: '',
+      groupDelegate2Role: '',
+      groupDelegate3Name: '',
+      groupDelegate3Email: '',
+      groupDelegate3Role: '',
+      agreedPrivacy: true,
+    });
     onClose();
   };
 
@@ -120,7 +188,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 <strong className="text-navy">{submittedData.delegatesCount}</strong>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Confirmation Sent To:</span>
+                <span className="text-slate-500">Delegate Email:</span>
                 <strong className="text-navy">{submittedData.email}</strong>
               </div>
             </div>
@@ -340,16 +408,27 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-600 hover:bg-slate-100"
+                disabled={isSubmitting}
+                className="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-600 hover:bg-slate-100 disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-grad-gold text-white text-xs font-bold shadow-md hover:opacity-95"
+                disabled={isSubmitting}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-grad-gold text-white text-xs font-bold shadow-md hover:opacity-95 disabled:opacity-60"
               >
-                Submit Registration
-                <ArrowRight className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Submitting...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Submit Registration</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </div>
           </form>

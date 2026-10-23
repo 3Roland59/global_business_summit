@@ -5,9 +5,14 @@ import { ASSETS } from '../data/summitData';
 interface FooterProps {
   onRegisterClick: (pkgId?: string) => void;
   onSponsorClick: () => void;
+  onContactClick: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onRegisterClick,
+  onSponsorClick,
+  onContactClick,
+}) => {
   return (
     <footer className="bg-navy-dark text-white pt-16 pb-10 border-t border-gold/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,6 +56,14 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
               <li><a href="#packages" className="hover:text-white transition-colors">Delegate Packages</a></li>
               <li><a href="#sponsorship" className="hover:text-white transition-colors">Sponsorship Tiers</a></li>
               <li><a href="#partners" className="hover:text-white transition-colors">Corporate Partners</a></li>
+              <li>
+                <button
+                  onClick={onContactClick}
+                  className="hover:text-white text-left transition-colors cursor-pointer"
+                >
+                  Contact Secretariat
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -61,27 +74,27 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
               <li>
-                <button onClick={() => onRegisterClick('startup')} className="hover:text-white text-left transition-colors">
+                <button onClick={() => onRegisterClick('startup')} className="hover:text-white text-left transition-colors cursor-pointer">
                   Start-up Package (GH₵2,985)
                 </button>
               </li>
               <li>
-                <button onClick={() => onRegisterClick('individual')} className="hover:text-white text-left transition-colors">
+                <button onClick={() => onRegisterClick('individual')} className="hover:text-white text-left transition-colors cursor-pointer">
                   Individual Delegate (GH₵3,600)
                 </button>
               </li>
               <li>
-                <button onClick={() => onRegisterClick('group')} className="hover:text-white text-left transition-colors">
+                <button onClick={() => onRegisterClick('group')} className="hover:text-white text-left transition-colors cursor-pointer">
                   Group Package (GH₵9,600 / 3 Delegates)
                 </button>
               </li>
               <li>
-                <button onClick={() => onRegisterClick('vip')} className="hover:text-white text-left transition-colors">
+                <button onClick={() => onRegisterClick('vip')} className="hover:text-white text-left transition-colors cursor-pointer">
                   VIP Executive Pass (GH₵8,995)
                 </button>
               </li>
               <li>
-                <button onClick={() => onRegisterClick('vvip')} className="hover:text-white text-left transition-colors">
+                <button onClick={() => onRegisterClick('vvip')} className="hover:text-white text-left transition-colors cursor-pointer">
                   VVIP Platinum Pass (GH₵13,799)
                 </button>
               </li>
@@ -100,9 +113,12 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold shrink-0" />
-                <a href="mailto:info@gbsummit2027.com" className="hover:text-white transition-colors">
+                <button
+                  onClick={onContactClick}
+                  className="hover:text-white transition-colors cursor-pointer text-left"
+                >
                   info@gbsummit2027.com
-                </a>
+                </button>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold shrink-0" />
@@ -110,12 +126,18 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
               </div>
             </div>
 
-            <div className="mt-5">
+            <div className="mt-5 flex flex-wrap gap-2">
+              <button
+                onClick={onContactClick}
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-gold hover:opacity-90 text-xs font-bold text-white transition-all cursor-pointer"
+              >
+                Send Message
+              </button>
               <button
                 onClick={onSponsorClick}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-600 hover:border-gold-light text-xs font-bold text-slate-300 hover:text-white transition-all"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-slate-600 hover:border-gold-light text-xs font-bold text-slate-300 hover:text-white transition-all cursor-pointer"
               >
-                Corporate Sponsorship Desk
+                Sponsorship Desk
               </button>
             </div>
           </div>
@@ -134,9 +156,13 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
             <a href="#twitter" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors">
               <Briefcase className="w-4 h-4" />
             </a>
-            <a href="mailto:info@gbsummit2027.com" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+            <button
+              onClick={onContactClick}
+              className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+              title="Email Secretariat"
+            >
               <Mail className="w-4 h-4" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -12,6 +12,7 @@ import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { SponsorshipModal } from './components/SponsorshipModal';
 import { SpeakerModal } from './components/SpeakerModal';
+import { ContactModal } from './components/ContactModal';
 import type { Speaker } from './types';
 
 export const App: React.FC = () => {
@@ -19,6 +20,7 @@ export const App: React.FC = () => {
   const [selectedPackageId, setSelectedPackageId] = useState('individual');
   const [sponsorshipOpen, setSponsorshipOpen] = useState(false);
   const [selectedSponsorTier, setSelectedSponsorTier] = useState('Gold');
+  const [contactOpen, setContactOpen] = useState(false);
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
   const handleOpenRegistration = (packageId: string = 'individual') => {
@@ -37,6 +39,7 @@ export const App: React.FC = () => {
       <Navbar
         onRegisterClick={() => handleOpenRegistration('individual')}
         onSponsorClick={() => handleOpenSponsorship('Gold')}
+        onContactClick={() => setContactOpen(true)}
       />
 
       <main>
@@ -77,9 +80,10 @@ export const App: React.FC = () => {
       <Footer
         onRegisterClick={pkgId => handleOpenRegistration(pkgId || 'individual')}
         onSponsorClick={() => handleOpenSponsorship('Gold')}
+        onContactClick={() => setContactOpen(true)}
       />
 
-      {/* Modals & Workflows */}
+      {/* Modals & Workflows with direct Email Transmission */}
       <RegistrationModal
         isOpen={registrationOpen}
         onClose={() => setRegistrationOpen(false)}
@@ -90,6 +94,11 @@ export const App: React.FC = () => {
         isOpen={sponsorshipOpen}
         onClose={() => setSponsorshipOpen(false)}
         initialTier={selectedSponsorTier}
+      />
+
+      <ContactModal
+        isOpen={contactOpen}
+        onClose={() => setContactOpen(false)}
       />
 
       <SpeakerModal

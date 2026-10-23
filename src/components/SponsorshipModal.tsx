@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { X, CheckCircle2, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, CheckCircle2, ArrowRight, Loader2 } from 'lucide-react';
 import { sponsorTiers } from '../data/summitData';
+import { sendSponsorshipEnquiry, RECIPIENT_EMAIL } from '../services/emailService';
 
 interface SponsorshipModalProps {
   isOpen: boolean;
@@ -22,26 +23,70 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState<{
     refId: string;
     orgName: string;
     tier: string;
+    recipientEmail: string;
+    mailtoFallbackUrl?: string;
   } | null>(null);
+
+  useEffect(() => {
+    if (initialTier) {
+      setFormData(prev => ({ ...prev, tier: initialTier }));
+    }
+  }, [initialTier]);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
     const generatedRef = `GBS-2027-SPON-${Math.floor(10000 + Math.random() * 90000)}`;
-    setSubmittedData({
-      refId: generatedRef,
-      orgName: formData.orgName,
-      tier: formData.tier,
-    });
+
+    try {
+      const result = await sendSponsorshipEnquiry({
+        refId: generatedRef,
+        orgName: formData.orgName,
+        contactName: formData.contactName,
+        email: formData.email,
+        phone: formData.phone,
+        tier: formData.tier,
+        message: formData.message,
+      });
+
+      setSubmittedData({
+        refId: generatedRef,
+        orgName: formData.orgName,
+        tier: formData.tier,
+        recipientEmail: RECIPIENT_EMAIL,
+        mailtoFallbackUrl: result.mailtoFallbackUrl,
+      });
+      setFormData({
+        tier: initialTier || 'Gold',
+        orgName: '',
+        contactName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     setSubmittedData(null);
+    setFormData({
+      tier: initialTier || 'Gold',
+      orgName: '',
+      contactName: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
     onClose();
   };
 
@@ -74,15 +119,17 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
             </div>
 
             <h4 className="text-2xl font-extrabold text-navy mb-2">
-              Enquiry Dispatched!
+              Enquiry Submitted
             </h4>
             <p className="text-sm text-slate-600 mb-6 leading-relaxed">
               Thank you. The <strong>FKI Holdings</strong> Corporate Sponsorship Directorate has received your request for <strong>{submittedData.tier} Sponsor Tier</strong> on behalf of <strong>{submittedData.orgName}</strong>.
             </p>
 
-            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6 text-xs text-left">
-              <span className="text-slate-500">Enquiry Reference:</span>{' '}
-              <strong className="font-mono text-navy">{submittedData.refId}</strong>
+            <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6 text-xs text-left space-y-1.5">
+              <div className="flex justify-between">
+                <span className="text-slate-500">Enquiry Reference:</span>
+                <strong className="font-mono text-navy">{submittedData.refId}</strong>
+              </div>
               <p className="mt-1 text-slate-500">
                 A dedicated partnership director will connect with your designated contact officer within 1 business day.
               </p>
@@ -189,16 +236,27 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
               <button
                 type="button"
                 onClick={handleClose}
-                className="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-600 hover:bg-slate-100"
+                disabled={isSubmitting}
+                className="px-5 py-2.5 rounded-xl border border-slate-300 text-xs font-bold text-slate-600 hover:bg-slate-100 disabled:opacity-50"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-grad-gold text-white text-xs font-bold shadow-md hover:opacity-95"
+                disabled={isSubmitting}
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-grad-gold text-white text-xs font-bold shadow-md hover:opacity-95 disabled:opacity-60"
               >
-                Submit Enquiry
-                <ArrowRight className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Submitting...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Submit Sponsorship Enquiry</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </div>
           </form>

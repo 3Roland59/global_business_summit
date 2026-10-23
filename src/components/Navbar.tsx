@@ -5,9 +5,14 @@ import { ASSETS } from '../data/summitData';
 interface NavbarProps {
   onRegisterClick: () => void;
   onSponsorClick: () => void;
+  onContactClick: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onRegisterClick,
+  onSponsorClick,
+  onContactClick,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -33,13 +38,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick 
               OFFICIALLY HOSTED BY <strong className="text-white">FKI HOLDINGS</strong>
             </span>
             <span className="opacity-40">|</span>
-            <a
-              href="mailto:info@gbsummit2027.com"
-              className="flex items-center gap-1 text-white hover:text-gold-light transition-colors"
+            <button
+              onClick={onContactClick}
+              className="flex items-center gap-1 text-white hover:text-gold-light transition-colors cursor-pointer"
             >
               <Mail className="w-3.5 h-3.5 text-gold-light" />
-              info@gbsummit2027.com
-            </a>
+              <span>info@gbsummit2027.com</span>
+            </button>
           </div>
         </div>
       </div>
@@ -87,19 +92,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick 
             <a href="#venue" className="text-sm font-semibold text-slate-700 hover:text-gold transition-colors">
               Venue
             </a>
+            <button
+              onClick={onContactClick}
+              className="text-sm font-semibold text-slate-700 hover:text-gold transition-colors cursor-pointer"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onSponsorClick}
-              className="text-xs font-bold text-navy hover:text-gold px-3 py-2 transition-colors uppercase tracking-wider"
+              className="text-xs font-bold text-navy hover:text-gold px-3 py-2 transition-colors uppercase tracking-wider cursor-pointer"
             >
               Sponsorship
             </button>
             <button
               onClick={onRegisterClick}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-navy hover:bg-navy-light text-white text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-navy hover:bg-navy-light text-white text-sm font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               Register Now
               <ArrowRight className="w-4 h-4 text-gold-light" />
@@ -156,6 +167,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick 
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onContactClick();
+                }}
+                className="text-base font-bold text-navy hover:text-gold py-1 border-b border-slate-100 text-left cursor-pointer"
+              >
+                Contact Secretariat
+              </button>
             </nav>
           </div>
 
@@ -165,7 +185,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick 
                 setMobileMenuOpen(false);
                 onRegisterClick();
               }}
-              className="w-full py-3.5 px-4 rounded-xl bg-grad-gold text-white font-bold text-center shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3.5 px-4 rounded-xl bg-grad-gold text-white font-bold text-center shadow-md flex items-center justify-center gap-2 cursor-pointer"
             >
               Register as Delegate
               <ArrowRight className="w-4 h-4" />
@@ -175,7 +195,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick, onSponsorClick 
                 setMobileMenuOpen(false);
                 onSponsorClick();
               }}
-              className="w-full py-3 px-4 rounded-xl border-2 border-navy text-navy font-bold text-center"
+              className="w-full py-3 px-4 rounded-xl border-2 border-navy text-navy font-bold text-center cursor-pointer"
             >
               Become a Sponsor
             </button>
