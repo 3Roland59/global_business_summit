@@ -78,7 +78,7 @@ Submitted via The Global Business Summit (GBS 2027) Portal`
   try {
     const postData: Record<string, string> = {
       _subject: subject,
-      _template: 'table',
+      _template: 'basic',
       _captcha: 'false',
       'Reference ID': payload.refId,
       'Delegate Package': `${payload.packageName} (${payload.packagePrice})`,
@@ -159,7 +159,7 @@ Submitted via The Global Business Summit (GBS 2027) Portal`
   try {
     const postData = {
       _subject: subject,
-      _template: 'table',
+      _template: 'basic',
       _captcha: 'false',
       'Reference ID': payload.refId,
       'Sponsorship Tier': payload.tier,
@@ -229,7 +229,7 @@ Submitted via The Global Business Summit (GBS 2027) Portal`
   try {
     const postData = {
       _subject: subject,
-      _template: 'table',
+      _template: 'basic',
       _captcha: 'false',
       'Reference ID': payload.refId,
       'Name': payload.name,
