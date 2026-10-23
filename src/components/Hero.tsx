@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, MapPin, Building, Sparkles, ArrowRight } from 'lucide-react';
+import { Calendar, MapPin, Building, ArrowRight } from 'lucide-react';
 import { ASSETS } from '../data/summitData';
 
 interface HeroProps {
@@ -49,7 +49,6 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
           <div className="lg:col-span-7 flex flex-col items-start">
             {/* Top Pill */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-gold-dark bg-gold/10 border border-gold/25 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-gold" />
               WEST AFRICA'S PREMIER INVESTMENT SUMMIT
             </div>
 
