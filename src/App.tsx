@@ -39,7 +39,6 @@ export const App: React.FC = () => {
         onSponsorClick={() => handleOpenSponsorship('Gold')}
       />
 
-      {/* Main Content Sections following ui.jpg */}
       <main>
         <Hero
           onRegisterClick={() => handleOpenRegistration('individual')}
