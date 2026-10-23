@@ -46,15 +46,15 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0B2240]/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-navy/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white rounded-3xl w-full max-w-lg max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-scaleUp">
         {/* Header */}
         <div className="p-6 border-b border-slate-100 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#9A6C15] bg-[#C58F28]/10 px-3 py-1 rounded-full border border-[#C58F28]/20">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-gold-dark bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
               CORPORATE PARTNERSHIP
             </span>
-            <h3 className="text-xl font-extrabold text-[#0B2240] mt-2">
+            <h3 className="text-xl font-extrabold text-navy mt-2">
               Sponsorship Enquiry
             </h3>
           </div>
@@ -69,11 +69,11 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
         {/* Content */}
         {submittedData ? (
           <div className="p-8 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#C58F28]/10 text-[#C58F28] flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-9 h-9" />
             </div>
 
-            <h4 className="text-2xl font-extrabold text-[#0B2240] mb-2">
+            <h4 className="text-2xl font-extrabold text-navy mb-2">
               Enquiry Dispatched!
             </h4>
             <p className="text-sm text-slate-600 mb-6 leading-relaxed">
@@ -82,7 +82,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
 
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mb-6 text-xs text-left">
               <span className="text-slate-500">Enquiry Reference:</span>{' '}
-              <strong className="font-mono text-[#0B2240]">{submittedData.refId}</strong>
+              <strong className="font-mono text-navy">{submittedData.refId}</strong>
               <p className="mt-1 text-slate-500">
                 A dedicated partnership director will connect with your designated contact officer within 1 business day.
               </p>
@@ -90,7 +90,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
 
             <button
               onClick={handleClose}
-              className="w-full py-3.5 px-6 rounded-xl bg-[#0B2240] text-white font-bold text-sm hover:bg-[#163660] transition-colors"
+              className="w-full py-3.5 px-6 rounded-xl bg-navy text-white font-bold text-sm hover:bg-navy-light transition-colors"
             >
               Close Window
             </button>
@@ -98,13 +98,13 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-4">
             <div>
-              <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                 Preferred Sponsorship Level *
               </label>
               <select
                 value={formData.tier}
                 onChange={e => setFormData({ ...formData, tier: e.target.value })}
-                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240] bg-slate-50/50"
+                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy bg-slate-50/50"
               >
                 {sponsorTiers.map(t => (
                   <option key={t.id} value={t.name}>
@@ -116,7 +116,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Organisation / Enterprise *
                 </label>
                 <input
@@ -124,12 +124,12 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
                   placeholder="e.g. Apex Global Bank"
                   value={formData.orgName}
                   onChange={e => setFormData({ ...formData, orgName: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Contact Person *
                 </label>
                 <input
@@ -137,7 +137,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
                   placeholder="e.g. Nana Afua"
                   value={formData.contactName}
                   onChange={e => setFormData({ ...formData, contactName: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
@@ -145,7 +145,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Corporate Email *
                 </label>
                 <input
@@ -153,12 +153,12 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
                   placeholder="partnerships@company.com"
                   value={formData.email}
                   onChange={e => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Telephone / Mobile *
                 </label>
                 <input
@@ -166,14 +166,14 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
                   placeholder="+233 20 000 0000"
                   value={formData.phone}
                   onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                 Brand Goals & Requirements
               </label>
               <textarea
@@ -181,7 +181,7 @@ export const SponsorshipModal: React.FC<SponsorshipModalProps> = ({
                 placeholder="Describe your exhibition booth, keynote, or deal room objectives..."
                 value={formData.message}
                 onChange={e => setFormData({ ...formData, message: e.target.value })}
-                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
               />
             </div>
 

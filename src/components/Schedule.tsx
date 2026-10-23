@@ -17,11 +17,11 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-[#0B4635] bg-[#0B4635]/10 border border-[#0B4635]/25 mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-green bg-green/10 border border-green/25 mb-4">
             <Clock className="w-3.5 h-3.5" />
             TWO-DAY COMPREHENSIVE AGENDA
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B2240] tracking-tight uppercase leading-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight uppercase leading-tight mb-4">
             SCHEDULE OF <span className="text-gradient-gold">SUMMIT</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
@@ -34,12 +34,12 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
           <button
             onClick={() => setActiveDay(1)}
             className={`flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full text-sm font-bold transition-all ${activeDay === 1
-                ? 'bg-[#0B2240] text-white shadow-lg'
-                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300'
+              ? 'bg-navy text-white shadow-lg'
+              : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300'
               }`}
           >
             <span>DAY 1</span>
-            <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${activeDay === 1 ? 'bg-[#C58F28] text-white' : 'bg-slate-100 text-slate-600'
+            <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${activeDay === 1 ? 'bg-gold text-white' : 'bg-slate-100 text-slate-600'
               }`}>
               26 MAY
             </span>
@@ -49,12 +49,12 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
           <button
             onClick={() => setActiveDay(2)}
             className={`flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full text-sm font-bold transition-all ${activeDay === 2
-                ? 'bg-[#0B2240] text-white shadow-lg'
-                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300'
+              ? 'bg-navy text-white shadow-lg'
+              : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-300'
               }`}
           >
             <span>DAY 2</span>
-            <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${activeDay === 2 ? 'bg-[#C58F28] text-white' : 'bg-slate-100 text-slate-600'
+            <span className={`text-[11px] font-extrabold px-2 py-0.5 rounded ${activeDay === 2 ? 'bg-gold text-white' : 'bg-slate-100 text-slate-600'
               }`}>
               27 MAY
             </span>
@@ -71,33 +71,33 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
                 className="relative flex items-start gap-3 sm:gap-6 group"
               >
                 {/* Left Column: Dedicated Time (Never covered by dot or line) */}
-                <div className="w-28 sm:w-44 shrink-0 text-right font-mono text-xs sm:text-sm font-bold text-[#0B2240] pt-4 pr-1 sm:pr-2 leading-snug">
+                <div className="w-28 sm:w-44 shrink-0 text-right font-mono text-xs sm:text-sm font-bold text-navy pt-4 pr-1 sm:pr-2 leading-snug">
                   {session.time}
                 </div>
 
                 {/* Center Column: Dedicated Timeline Node and Continuous Line */}
                 <div className="relative flex flex-col items-center self-stretch shrink-0 w-6">
                   {/* Continuous vertical connecting line from beginning to end across all rows */}
-                  <div className="w-0.5 bg-[#0B4635] opacity-35 absolute top-0 -bottom-6 sm:-bottom-8" />
+                  <div className="w-0.5 bg-green opacity-35 absolute top-0 -bottom-6 sm:-bottom-8" />
 
                   {/* Node Dot: Perfectly centered in its own column */}
-                  <div className="relative z-10 w-4 h-4 rounded-full bg-white border-[3.5px] border-[#C58F28] shadow-xs group-hover:bg-[#C58F28] group-hover:scale-125 transition-all mt-4" />
+                  <div className="relative z-10 w-4 h-4 rounded-full bg-white border-[3.5px] border-gold shadow-xs group-hover:bg-gold group-hover:scale-125 transition-all mt-4" />
                 </div>
 
                 {/* Right Column: Session Card */}
                 <div className="flex-1 min-w-0">
-                  <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-xs group-hover:border-[#0B2240] group-hover:shadow-md transition-all">
+                  <div className="bg-white border border-slate-200 rounded-xl p-4 sm:p-5 shadow-xs group-hover:border-navy group-hover:shadow-md transition-all">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-slate-100 text-[#0B2240]">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded bg-slate-100 text-navy">
                         {session.track}
                       </span>
                       <span className="text-xs text-slate-500 font-medium flex items-center gap-1">
-                        <MapPin className="w-3.5 h-3.5 text-[#C58F28]" />
+                        <MapPin className="w-3.5 h-3.5 text-gold" />
                         {session.room}
                       </span>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-[#0B2240] mb-2 leading-snug">
+                    <h3 className="text-base sm:text-lg font-bold text-navy mb-2 leading-snug">
                       {session.title}
                     </h3>
 
@@ -111,7 +111,7 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
                           key={sIdx}
                           className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-50 border border-slate-200 px-2.5 py-1 rounded-full"
                         >
-                          <Users className="w-3 h-3 text-[#C58F28]" />
+                          <Users className="w-3 h-3 text-gold" />
                           {sp}
                         </span>
                       ))}
@@ -134,7 +134,7 @@ export const Schedule: React.FC<ScheduleProps> = ({ onRegisterClick, onSponsorCl
           </button>
           <button
             onClick={onSponsorClick}
-            className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white border-2 border-[#0B2240] text-[#0B2240] font-bold text-sm hover:bg-[#0B2240] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white border-2 border-navy text-navy font-bold text-sm hover:bg-navy hover:text-white transition-all"
           >
             Become a Sponsor
           </button>

@@ -9,7 +9,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick }) => {
   return (
-    <footer className="bg-[#071629] text-white pt-16 pb-10 border-t border-[#C58F28]/25">
+    <footer className="bg-navy-dark text-white pt-16 pb-10 border-t border-gold/25">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
           {/* Col 1: Brand & Overview */}
@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
                 <div className="font-extrabold text-base tracking-wide text-white">
                   THE GLOBAL BUSINESS SUMMIT
                 </div>
-                <div className="text-[11px] font-bold text-[#E0AB43] uppercase tracking-wider">
+                <div className="text-[11px] font-bold text-gold-light uppercase tracking-wider">
                   GBS 2027 • ACCRA
                 </div>
               </div>
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
 
           {/* Col 2: Navigation Links */}
           <div className="lg:col-span-2">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#E0AB43] mb-4">
+            <h4 className="text-xs font-extrabold uppercase tracking-widest text-gold-light mb-4">
               Summit Agenda
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
 
           {/* Col 3: Packages Quick Action */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#E0AB43] mb-4">
+            <h4 className="text-xs font-extrabold uppercase tracking-widest text-gold-light mb-4">
               Delegate Registration
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
@@ -90,22 +90,22 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
 
           {/* Col 4: Secretariat Contact */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs font-extrabold uppercase tracking-widest text-[#E0AB43] mb-4">
+            <h4 className="text-xs font-extrabold uppercase tracking-widest text-gold-light mb-4">
               Summit Secretariat
             </h4>
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[#C58F28] flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                 <span>Mövenpick Ambassador Hotel Accra, Ghana</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#C58F28] flex-shrink-0" />
+                <Mail className="w-4 h-4 text-gold shrink-0" />
                 <a href="mailto:info@gbsummit2027.com" className="hover:text-white transition-colors">
                   info@gbsummit2027.com
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#C58F28] flex-shrink-0" />
+                <Phone className="w-4 h-4 text-gold shrink-0" />
                 <span>+233 (0) 30 200 0000</span>
               </div>
             </div>
@@ -113,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
             <div className="mt-5">
               <button
                 onClick={onSponsorClick}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-600 hover:border-[#E0AB43] text-xs font-bold text-slate-300 hover:text-white transition-all"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-600 hover:border-gold-light text-xs font-bold text-slate-300 hover:text-white transition-all"
               >
                 Corporate Sponsorship Desk
               </button>
@@ -128,13 +128,13 @@ export const Footer: React.FC<FooterProps> = ({ onRegisterClick, onSponsorClick 
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="#linkedin" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#C58F28] text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+            <a href="#linkedin" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors">
               <Globe className="w-4 h-4" />
             </a>
-            <a href="#twitter" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#C58F28] text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+            <a href="#twitter" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors">
               <Briefcase className="w-4 h-4" />
             </a>
-            <a href="mailto:info@gbsummit2027.com" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-[#C58F28] text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+            <a href="mailto:info@gbsummit2027.com" className="w-8 h-8 rounded-full bg-slate-800 hover:bg-gold text-slate-300 hover:text-white flex items-center justify-center transition-colors">
               <Mail className="w-4 h-4" />
             </a>
           </div>

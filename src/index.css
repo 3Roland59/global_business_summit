@@ -47,6 +47,7 @@ body {
 .text-gradient-gold {
   background: linear-gradient(135deg, #C58F28 0%, #E0AB43 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -60,8 +61,17 @@ body {
 
 /* Custom animations */
 @keyframes pulseSubtle {
-  0%, 100% { opacity: 0.85; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.04); }
+
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
 }
 
 .animate-pulse-subtle {

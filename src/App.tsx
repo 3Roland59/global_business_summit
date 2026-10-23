@@ -32,7 +32,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-[#C58F28] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased selection:bg-gold selection:text-white">
       {/* Navigation */}
       <Navbar
         onRegisterClick={() => handleOpenRegistration('individual')}

@@ -72,15 +72,15 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#0B2240]/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-navy/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
       <div className="bg-white rounded-3xl w-full max-w-xl max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 animate-scaleUp">
         {/* Modal Header */}
         <div className="p-6 border-b border-slate-100 flex items-center justify-between">
           <div>
-            <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#9A6C15] bg-[#C58F28]/10 px-3 py-1 rounded-full border border-[#C58F28]/20">
+            <span className="text-[11px] font-extrabold uppercase tracking-widest text-gold-dark bg-gold/10 px-3 py-1 rounded-full border border-gold/20">
               GBS 2027 REGISTRATION
             </span>
-            <h3 className="text-xl font-extrabold text-[#0B2240] mt-2">
+            <h3 className="text-xl font-extrabold text-navy mt-2">
               Delegate Registration Form
             </h3>
           </div>
@@ -95,11 +95,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
         {/* Modal Body */}
         {submittedData ? (
           <div className="p-8 text-center">
-            <div className="w-16 h-16 rounded-full bg-[#0B4635]/10 text-[#0B4635] flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 rounded-full bg-green/10 text-green flex items-center justify-center mx-auto mb-4">
               <CheckCircle2 className="w-9 h-9" />
             </div>
 
-            <h4 className="text-2xl font-extrabold text-[#0B2240] mb-2">
+            <h4 className="text-2xl font-extrabold text-navy mb-2">
               Registration Received!
             </h4>
             <p className="text-sm text-slate-600 mb-6 leading-relaxed">
@@ -109,31 +109,31 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-6 text-left space-y-2.5 text-xs sm:text-sm">
               <div className="flex justify-between">
                 <span className="text-slate-500">Registration Ref:</span>
-                <strong className="font-mono text-[#0B2240]">{submittedData.refId}</strong>
+                <strong className="font-mono text-navy">{submittedData.refId}</strong>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Package:</span>
-                <strong className="text-[#0B2240]">{submittedData.packageName}</strong>
+                <strong className="text-navy">{submittedData.packageName}</strong>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Delegates:</span>
-                <strong className="text-[#0B2240]">{submittedData.delegatesCount}</strong>
+                <strong className="text-navy">{submittedData.delegatesCount}</strong>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Confirmation Sent To:</span>
-                <strong className="text-[#0B2240]">{submittedData.email}</strong>
+                <strong className="text-navy">{submittedData.email}</strong>
               </div>
             </div>
 
             {/* Crucial requirement doc instruction */}
-            <div className="bg-[#C58F28]/10 border border-[#C58F28]/30 rounded-2xl p-4 mb-6 text-left text-xs text-[#0B2240] leading-relaxed">
-              <strong className="text-[#9A6C15] font-bold block mb-1">Payment Instructions Next Steps:</strong>
+            <div className="bg-gold/10 border border-gold/30 rounded-2xl p-4 mb-6 text-left text-xs text-navy leading-relaxed">
+              <strong className="text-gold-dark font-bold block mb-1">Payment Instructions Next Steps:</strong>
               Payment is not collected at this stage. The <strong>FKI Holdings</strong> Secretariat will verify your registration and dispatch your official Summit Invoice alongside bank transfer and electronic payment instructions via email within 24 hours.
             </div>
 
             <button
               onClick={handleClose}
-              className="w-full py-3.5 px-6 rounded-xl bg-[#0B2240] text-white font-bold text-sm hover:bg-[#163660] transition-colors"
+              className="w-full py-3.5 px-6 rounded-xl bg-navy text-white font-bold text-sm hover:bg-navy-light transition-colors"
             >
               Return to Summit Overview
             </button>
@@ -141,7 +141,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
         ) : (
           <form onSubmit={handleSubmit} className="p-6 space-y-5">
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 flex items-center gap-2.5 text-xs text-slate-600">
-              <ShieldCheck className="w-5 h-5 text-[#C58F28] flex-shrink-0" />
+              <ShieldCheck className="w-5 h-5 text-gold shrink-0" />
               <span>
                 <strong>Zero-Risk Registration:</strong> No upfront payment is required today. Submit your accreditation details to reserve your package.
               </span>
@@ -149,7 +149,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
             {/* Package Selector */}
             <div>
-              <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                 Selected Delegate Package *
               </label>
               <select
@@ -162,7 +162,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     delegatesCount: val === 'group' ? 3 : 1,
                   }));
                 }}
-                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240] bg-slate-50/50"
+                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy bg-slate-50/50"
                 required
               >
                 {delegatePackages.map(pkg => (
@@ -176,7 +176,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             {/* Lead Name & Organization */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Lead Delegate Full Name *
                 </label>
                 <input
@@ -184,12 +184,12 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="e.g. Kwabena Mensah"
                   value={formData.fullName}
                   onChange={e => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Organisation / Business *
                 </label>
                 <input
@@ -197,7 +197,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="e.g. Atlas Capital Group"
                   value={formData.organization}
                   onChange={e => setFormData({ ...formData, organization: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
@@ -206,7 +206,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             {/* Job Title & Country */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Job Title / Designation
                 </label>
                 <input
@@ -214,11 +214,11 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="e.g. Managing Director"
                   value={formData.jobTitle}
                   onChange={e => setFormData({ ...formData, jobTitle: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Country
                 </label>
                 <input
@@ -226,7 +226,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="Ghana / International"
                   value={formData.country}
                   onChange={e => setFormData({ ...formData, country: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                 />
               </div>
             </div>
@@ -234,7 +234,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             {/* Email & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Official Email Address *
                 </label>
                 <input
@@ -242,12 +242,12 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="name@company.com"
                   value={formData.email}
                   onChange={e => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+                <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                   Telephone / Mobile *
                 </label>
                 <input
@@ -255,7 +255,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   placeholder="+233 24 000 0000"
                   value={formData.phone}
                   onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                  className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
                   required
                 />
               </div>
@@ -264,8 +264,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             {/* Dynamic Group Registration for 3 Delegates (as required in docx section 7) */}
             {formData.packageId === 'group' && (
               <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-3">
-                <div className="text-xs font-extrabold text-[#0B2240] uppercase flex items-center gap-1.5">
-                  <Users className="w-4 h-4 text-[#C58F28]" />
+                <div className="text-xs font-extrabold text-navy uppercase flex items-center gap-1.5">
+                  <Users className="w-4 h-4 text-gold" />
                   Additional Group Delegates (Delegates 2 & 3)
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -309,7 +309,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
             {/* Special Notes */}
             <div>
-              <label className="block text-xs font-bold text-[#0B2240] uppercase tracking-wider mb-1.5">
+              <label className="block text-xs font-bold text-navy uppercase tracking-wider mb-1.5">
                 Special Notes / Investment Focus / Dietary
               </label>
               <textarea
@@ -317,7 +317,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                 placeholder="Mention specific sector interests or accessibility requirements..."
                 value={formData.notes}
                 onChange={e => setFormData({ ...formData, notes: e.target.value })}
-                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#0B2240]"
+                className="w-full py-2.5 px-3.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-navy"
               />
             </div>
 

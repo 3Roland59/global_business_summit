@@ -15,9 +15,9 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
           <div className="lg:col-span-6 relative">
             <div className="relative max-w-lg mx-auto lg:max-w-none">
               {/* Colored Geometric Backdrop Squares as in ui.jpg */}
-              <div className="absolute -top-4 -left-4 w-52 h-52 bg-[#0B2240] rounded-3xl opacity-90 z-0" />
-              <div className="absolute -bottom-5 -right-5 w-48 h-48 bg-[#C58F28] rounded-3xl opacity-85 z-0" />
-              <div className="absolute top-1/2 -left-6 w-16 h-16 bg-[#0B4635] rounded-xl z-0" />
+              <div className="absolute -top-4 -left-4 w-52 h-52 bg-navy rounded-3xl opacity-90 z-0" />
+              <div className="absolute -bottom-5 -right-5 w-48 h-48 bg-gold rounded-3xl opacity-85 z-0" />
+              <div className="absolute top-1/2 -left-6 w-16 h-16 bg-green rounded-xl z-0" />
 
               {/* Primary Summit Networking Image */}
               <div className="relative z-10 w-[88%] ml-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
@@ -41,17 +41,17 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
 
           {/* Right: Narrative, Mission, and Stats Counter */}
           <div className="lg:col-span-6 flex flex-col items-start pt-6 lg:pt-0">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-[#0B4635] bg-[#0B4635]/10 border border-[#0B4635]/25 mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-green bg-green/10 border border-green/25 mb-4">
               <Calendar className="w-3.5 h-3.5" />
               26–27 MAY 2027 • ACCRA, GHANA
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B2240] tracking-tight uppercase leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy tracking-tight uppercase leading-tight mb-6">
               ABOUT THE EVENT <br />
               <span className="text-gradient-gold">THE GLOBAL BUSINESS SUMMIT</span>
             </h2>
 
-            <p className="text-base sm:text-lg font-medium text-[#0B2240] leading-relaxed mb-4">
+            <p className="text-base sm:text-lg font-medium text-navy leading-relaxed mb-4">
               The Global Business Summit (GBS 2027) is an elite international business and investment gathering convened by <strong>FKI Holdings</strong> to catalyze private-sector capital and sovereign partnerships across Africa.
             </p>
 
@@ -68,9 +68,9 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
                 { number: '50', suffix: '+', label: 'Represented Economies' },
               ].map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#0B2240] tracking-tight">
+                  <div className="text-3xl sm:text-4xl font-extrabold text-navy tracking-tight">
                     {stat.number}
-                    <span className="text-[#C58F28]">{stat.suffix}</span>
+                    <span className="text-gold">{stat.suffix}</span>
                   </div>
                   <div className="text-xs font-semibold text-slate-500 mt-1">
                     {stat.label}
@@ -83,18 +83,18 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
             <div className="flex flex-wrap items-center gap-4">
               <button
                 onClick={onRegisterClick}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#0B2240] hover:bg-[#163660] text-white font-bold text-sm shadow-md transition-all transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-navy hover:bg-navy-light text-white font-bold text-sm shadow-md transition-all transform hover:-translate-y-0.5"
               >
                 Register Your Interest
-                <ArrowRight className="w-4 h-4 text-[#E0AB43]" />
+                <ArrowRight className="w-4 h-4 text-gold-light" />
               </button>
               <button
                 onClick={() => {
                   alert('The official GBS 2027 Summit Prospectus is prepared by FKI Holdings Secretariat and will be dispatched to your email upon registration.');
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-slate-300 hover:border-[#0B2240] text-slate-700 hover:text-[#0B2240] font-bold text-sm transition-all"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-slate-300 hover:border-navy text-slate-700 hover:text-navy font-bold text-sm transition-all"
               >
-                <FileText className="w-4 h-4 text-[#C58F28]" />
+                <FileText className="w-4 h-4 text-gold" />
                 Download Prospectus
               </button>
             </div>

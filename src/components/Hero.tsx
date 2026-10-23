@@ -38,34 +38,34 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
   }, []);
 
   return (
-    <section id="home" className="relative pt-12 pb-20 md:py-24 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden border-b border-slate-200">
+    <section id="home" className="relative pt-12 pb-20 md:py-24 bg-linear-to-b from-white via-slate-50 to-white overflow-hidden border-b border-slate-200">
       {/* Decorative ambient glowing backdrops */}
-      <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-[#C58F28]/10 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-[#0B4635]/10 blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 -mr-24 -mt-24 w-96 h-96 rounded-full bg-gold/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-96 h-96 rounded-full bg-green/10 blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Headings, Theme, CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start">
             {/* Top Pill */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-[#9A6C15] bg-[#C58F28]/10 border border-[#C58F28]/25 mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#C58F28]" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase text-gold-dark bg-gold/10 border border-gold/25 mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-gold" />
               WEST AFRICA'S PREMIER INVESTMENT SUMMIT
             </div>
 
             {/* Main Title */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0B2240] uppercase leading-[1.08] mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-navy uppercase leading-[1.08] mb-6">
               THE GLOBAL <br />
               BUSINESS SUMMIT <span className="text-gradient-gold">2027</span>
             </h1>
 
             {/* Summit Theme Box from Requirement Document */}
-            <div className="w-full bg-white border-l-4 border-[#C58F28] border-y border-r border-slate-200 rounded-xl p-5 shadow-sm mb-6">
-              <div className="text-[11px] font-extrabold tracking-widest text-[#9A6C15] uppercase mb-1.5 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#C58F28]" />
+            <div className="w-full bg-white border-l-4 border-gold border-y border-r rounded-xl p-5 shadow-sm mb-6">
+              <div className="text-[11px] font-extrabold tracking-widest text-gold-dark uppercase mb-1.5 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-gold" />
                 Official Summit Theme
               </div>
-              <p className="text-base sm:text-lg font-bold text-[#0B2240] leading-snug">
+              <p className="text-base sm:text-lg font-bold text-navy leading-snug">
                 “Bridging the Global Investment Gap: Unlocking Capital, Expanding Opportunities and Accelerating Economic Growth”
               </p>
             </div>
@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
               </button>
               <button
                 onClick={onSponsorClick}
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white border-2 border-[#0B2240] hover:bg-[#0B2240] text-[#0B2240] hover:text-white font-bold text-base transition-all transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-xl bg-white border-2 border-navy hover:bg-navy text-navy hover:text-white font-bold text-base transition-all transform hover:-translate-y-0.5"
               >
                 Become a Sponsor
               </button>
@@ -95,15 +95,15 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
             {/* Trust Indicators */}
             <div className="w-full pt-6 border-t border-slate-200 grid grid-cols-2 sm:grid-cols-3 gap-4">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                <Calendar className="w-4 h-4 text-[#C58F28]" />
+                <Calendar className="w-4 h-4 text-gold" />
                 <span>26–27 May 2027</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                <MapPin className="w-4 h-4 text-[#C58F28]" />
+                <MapPin className="w-4 h-4 text-gold" />
                 <span>Accra, Ghana</span>
               </div>
               <div className="col-span-2 sm:col-span-1 flex items-center gap-2 text-xs font-semibold text-slate-600">
-                <Building className="w-4 h-4 text-[#C58F28]" />
+                <Building className="w-4 h-4 text-gold" />
                 <span>Host: FKI Holdings</span>
               </div>
             </div>
@@ -112,23 +112,23 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
           {/* Right Column: Stage Media & Overlapping Countdown (Replicating ui.jpg geometry) */}
           <div className="lg:col-span-5 flex flex-col items-center relative">
             {/* Stage Media Card */}
-            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-[#0B2240] relative group">
+            <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-navy relative group">
               <img
                 src={ASSETS.heroKeynote}
                 alt="GBS 2027 Keynote Session at Mövenpick Ambassador Hotel Accra"
                 className="w-full h-80 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071629] via-[#071629]/40 to-transparent flex flex-col justify-end p-6 text-white">
+              <div className="absolute inset-0 bg-linear-to-t from-navy-dark via-navy-dark/40 to-transparent flex flex-col justify-end p-6 text-white">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-xs font-bold text-[#E0AB43] uppercase tracking-wider block">
+                    <span className="text-xs font-bold text-gold-light uppercase tracking-wider block">
                       Grand Ballroom Plenary
                     </span>
                     <strong className="text-base font-extrabold">
                       Mövenpick Ambassador Hotel Accra
                     </strong>
                   </div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0B4635]/90 border border-white/20 text-xs font-bold text-white shadow-sm">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green/90 border border-white/20 text-xs font-bold text-white shadow-sm">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                     SUMMIT 2027
                   </div>
@@ -138,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
 
             {/* Floating Live Countdown Card directly below stage card (ui.jpg design) */}
             <div className="w-[92%] -mt-8 bg-white border border-slate-200 rounded-2xl shadow-xl p-5 relative z-20 flex flex-col items-center text-center">
-              <span className="text-[11px] font-extrabold tracking-widest text-[#0B2240] uppercase mb-3">
+              <span className="text-[11px] font-extrabold tracking-widest text-navy uppercase mb-3">
                 COUNTDOWN TO GBS 2027 INAUGURATION
               </span>
 
@@ -153,7 +153,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
                     key={idx}
                     className="bg-slate-50 border border-slate-200/80 rounded-xl py-2 px-1 flex flex-col items-center"
                   >
-                    <span className="font-mono text-2xl font-extrabold text-[#0B2240] leading-none">
+                    <span className="font-mono text-2xl font-extrabold text-navy leading-none">
                       {String(item.value).padStart(2, '0')}
                     </span>
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">
@@ -165,10 +165,10 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
 
               <button
                 onClick={onRegisterClick}
-                className="w-full py-2.5 px-4 rounded-xl bg-[#0B2240] hover:bg-[#163660] text-white text-xs font-extrabold uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 px-4 rounded-xl bg-navy hover:bg-navy-light text-white text-xs font-extrabold uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-1.5"
               >
                 <span>Secure Your Pass Today</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#E0AB43]" />
+                <ArrowRight className="w-3.5 h-3.5 text-gold-light" />
               </button>
             </div>
           </div>
