@@ -2,7 +2,7 @@
 // Sends form submissions directly to the configured recipient email address.
 
 export const RECIPIENT_EMAIL =
-  import.meta.env.VITE_SUBMISSION_EMAIL;
+  import.meta.env.VITE_SUBMISSION_EMAIL || 'fredkwabenainkoom1@gmail.com';
 
 export interface DelegateSubmissionPayload {
   refId: string;

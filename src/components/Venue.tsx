@@ -19,17 +19,17 @@ export const Venue: React.FC<VenueProps> = ({ onRegisterClick }) => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight mb-4">
-              Mövenpick Ambassador Hotel Accra, Ghana
+              Kempinski Hotel Gold Coast City, Accra, Ghana
             </h2>
 
             <p className="text-sm sm:text-base text-slate-200 leading-relaxed mb-8">
-              Set amidst 16 acres of lush landscaped gardens in the heart of Accra’s financial and diplomatic district, Mövenpick Ambassador Hotel is West Africa's leading five-star convention destination.
+              Set in the heart of Accra's upscale Cantonments district, Kempinski Hotel Gold Coast City is Ghana's flagship five-star luxury hotel and premier convention destination — the perfect address for Africa's most important investment summit.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
                 <MapPin className="w-4 h-4 text-gold shrink-0" />
-                <span>Independence Avenue, Ridge, Accra</span>
+                <span>Cantonments, Accra, Ghana</span>
               </div>
               <div className="flex items-center gap-3 text-xs sm:text-sm text-slate-200">
                 <Globe className="w-4 h-4 text-gold shrink-0" />
@@ -60,7 +60,7 @@ export const Venue: React.FC<VenueProps> = ({ onRegisterClick }) => {
           <div className="lg:col-span-5 relative min-h-75 lg:min-h-full">
             <img
               src={ASSETS.heroKeynote}
-              alt="Mövenpick Ambassador Hotel Accra Ballroom"
+              alt="Kempinski Hotel Gold Coast City Accra — Official GBS 2027 Venue"
               className="w-full h-full object-cover"
             />
           </div>

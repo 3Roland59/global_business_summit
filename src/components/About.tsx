@@ -23,7 +23,7 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
               <div className="relative z-10 w-[88%] ml-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src={ASSETS.networking}
-                  alt="Executive delegates networking at Mövenpick Ambassador Hotel Accra"
+                  alt="Executive delegates networking at Kempinski Hotel Gold Coast City Accra"
                   className="w-full h-80 sm:h-96 object-cover"
                 />
               </div>

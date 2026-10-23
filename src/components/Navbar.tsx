@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="opacity-40">|</span>
             <span className="flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-gold-light" />
-              MÖVENPICK AMBASSADOR HOTEL ACCRA, GHANA
+              KEMPINSKI HOTEL GOLD COAST CITY, ACCRA
             </span>
           </div>
 
@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-1 text-white hover:text-gold-light transition-colors cursor-pointer"
             >
               <Mail className="w-3.5 h-3.5 text-gold-light" />
-              <span>info@gbsummit2027.com</span>
+              <span>fredkwabenainkoom1@gmail.com</span>
             </button>
           </div>
         </div>

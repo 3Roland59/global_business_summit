@@ -109,7 +109,7 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-3 text-xs sm:text-sm text-slate-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                <span>Mövenpick Ambassador Hotel Accra, Ghana</span>
+                <span>Kempinski Hotel Gold Coast City, Accra, Ghana</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-gold shrink-0" />
@@ -117,12 +117,17 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={onContactClick}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  info@gbsummit2027.com
+                  fredkwabenainkoom1@gmail.com
                 </button>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-gold shrink-0" />
-                <span>+233 (0) 30 200 0000</span>
+                <a href="tel:0539509902" className="hover:text-white transition-colors">0539 509 902</a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-gold shrink-0" />
+                <span className="text-gold-light font-semibold">WhatsApp:</span>
+                <a href="https://wa.me/233543382610" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">0543 382 610</a>
               </div>
             </div>
 

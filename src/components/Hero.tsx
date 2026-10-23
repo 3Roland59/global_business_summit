@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
 
             {/* Summit Overview Paragraph */}
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
-              Convening sovereign leaders, institutional asset allocators, multinational corporations, and visionary African entrepreneurs for two days of strategic deal-making and bilateral partnerships at the Mövenpick Ambassador Hotel Accra.
+              Convening sovereign leaders, institutional asset allocators, multinational corporations, and visionary African entrepreneurs for two days of strategic deal-making and bilateral partnerships at the Kempinski Hotel Gold Coast City, Accra.
             </p>
 
             {/* CTAs */}
@@ -114,7 +114,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
             <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-navy relative group">
               <img
                 src={ASSETS.heroKeynote}
-                alt="GBS 2027 Keynote Session at Mövenpick Ambassador Hotel Accra"
+                alt="GBS 2027 Keynote Session at Kempinski Hotel Gold Coast City Accra"
                 className="w-full h-80 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-linear-to-t from-navy-dark via-navy-dark/40 to-transparent flex flex-col justify-end p-6 text-white">
@@ -124,7 +124,7 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
                       Grand Ballroom Plenary
                     </span>
                     <strong className="text-base font-extrabold">
-                      Mövenpick Ambassador Hotel Accra
+                      Kempinski Hotel Gold Coast City, Accra
                     </strong>
                   </div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green/90 border border-white/20 text-xs font-bold text-white shadow-sm">
