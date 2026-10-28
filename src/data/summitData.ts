@@ -4,12 +4,12 @@ import partner2Img from '../assets/partner2.jpeg';
 import partner3Img from '../assets/partner3.jpeg';
 import partner4Img from '../assets/partner4.jpeg';
 import partner5Img from '../assets/partner5.jpeg';
-import heroKeynoteImg from '../assets/hero_keynote.jpg';
-import speaker1Img from '../assets/speaker1.jpg';
-import speaker2Img from '../assets/speaker2.jpg';
-import speaker3Img from '../assets/speaker3.jpg';
-import speaker4Img from '../assets/speaker4.jpg';
-import networkingImg from '../assets/summit_networking.jpg';
+import heroKeynoteImg from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.51.00 (2).jpeg';
+import networkingImg from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.51.00 (1).jpeg';
+import speaker1Img from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.51.00 (3).jpeg';
+import speaker2Img from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.51.00.jpeg';
+import speaker3Img from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.52.38.jpeg';
+import speaker4Img from '../assets/new_images/WhatsApp Image 2026-10-27 at 11.52.44.jpeg';
 
 import type {
   DelegatePackage,

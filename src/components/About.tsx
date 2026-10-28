@@ -23,8 +23,8 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
               <div className="relative z-10 w-[88%] ml-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src={ASSETS.networking}
-                  alt="Executive delegates networking at Kempinski Hotel Gold Coast City Accra"
-                  className="w-full h-80 sm:h-96 object-cover"
+                  alt="A glimpse of the Global Business Summit"
+                  className="w-full h-80 sm:h-96 object-cover blur-[2px] scale-105"
                 />
               </div>
 
@@ -32,8 +32,8 @@ export const About: React.FC<AboutProps> = ({ onRegisterClick }) => {
               <div className="absolute -bottom-8 left-0 w-[54%] z-20 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <img
                   src={ASSETS.speaker1}
-                  alt="Keynote leadership delegate"
-                  className="w-full h-52 sm:h-60 object-cover"
+                  alt="A glimpse of the Global Business Summit"
+                  className="w-full h-52 sm:h-60 object-cover blur-[2px] scale-105"
                 />
               </div>
             </div>

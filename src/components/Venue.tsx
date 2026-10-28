@@ -60,8 +60,8 @@ export const Venue: React.FC<VenueProps> = ({ onRegisterClick }) => {
           <div className="lg:col-span-5 relative min-h-75 lg:min-h-full">
             <img
               src={ASSETS.heroKeynote}
-              alt="Kempinski Hotel Gold Coast City Accra — Official GBS 2027 Venue"
-              className="w-full h-full object-cover"
+              alt="A blurred glimpse of the Global Business Summit"
+              className="w-full h-full object-cover blur-[2px] scale-105"
             />
           </div>
         </div>

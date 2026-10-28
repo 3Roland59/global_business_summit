@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-400">
               <li><a href="#about" className="hover:text-white transition-colors">About Summit</a></li>
-              <li><a href="#speakers" className="hover:text-white transition-colors">Confirmed Faculty</a></li>
+              <li><a href="#speakers" className="hover:text-white transition-colors">Speaker Reveal</a></li>
               <li><a href="#schedule" className="hover:text-white transition-colors">Summit Programme</a></li>
               <li><a href="#packages" className="hover:text-white transition-colors">Delegate Packages</a></li>
               <li><a href="#sponsorship" className="hover:text-white transition-colors">Sponsorship Tiers</a></li>

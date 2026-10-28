@@ -11,9 +11,7 @@ import { Venue } from './components/Venue';
 import { Footer } from './components/Footer';
 import { RegistrationModal } from './components/RegistrationModal';
 import { SponsorshipModal } from './components/SponsorshipModal';
-import { SpeakerModal } from './components/SpeakerModal';
 import { ContactModal } from './components/ContactModal';
-import type { Speaker } from './types';
 
 export const App: React.FC = () => {
   const [registrationOpen, setRegistrationOpen] = useState(false);
@@ -21,7 +19,6 @@ export const App: React.FC = () => {
   const [sponsorshipOpen, setSponsorshipOpen] = useState(false);
   const [selectedSponsorTier, setSelectedSponsorTier] = useState('Gold');
   const [contactOpen, setContactOpen] = useState(false);
-  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
   const handleOpenRegistration = (packageId: string = 'individual') => {
     setSelectedPackageId(packageId);
@@ -52,9 +49,7 @@ export const App: React.FC = () => {
           onRegisterClick={() => handleOpenRegistration('individual')}
         />
 
-        <Speakers
-          onSpeakerSelect={sp => setSelectedSpeaker(sp)}
-        />
+        <Speakers />
 
         <Schedule
           onRegisterClick={() => handleOpenRegistration('individual')}
@@ -99,15 +94,6 @@ export const App: React.FC = () => {
       <ContactModal
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
-      />
-
-      <SpeakerModal
-        speaker={selectedSpeaker}
-        onClose={() => setSelectedSpeaker(null)}
-        onRegisterClick={() => {
-          setSelectedSpeaker(null);
-          handleOpenRegistration('individual');
-        }}
       />
     </div>
   );

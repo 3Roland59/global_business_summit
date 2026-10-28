@@ -114,8 +114,8 @@ export const Hero: React.FC<HeroProps> = ({ onRegisterClick, onSponsorClick }) =
             <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-navy relative group">
               <img
                 src={ASSETS.heroKeynote}
-                alt="GBS 2027 Keynote Session at Kempinski Hotel Gold Coast City Accra"
-                className="w-full h-80 sm:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
+                alt="A blurred glimpse of the Global Business Summit"
+                className="w-full h-80 sm:h-96 object-cover blur-[2px] scale-105 transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-navy-dark via-navy-dark/40 to-transparent flex flex-col justify-end p-6 text-white">
                 <div className="flex items-center justify-between">
